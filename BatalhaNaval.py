@@ -9,11 +9,18 @@ tabuleiro = [ [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
               ]
 
-toculto = [   [0,0,0,0,0,0,0,0,0,0],
+tjogador = [  [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
+              ]
+
+tcomputador = [[0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
               ]
 
 tabuleiro2 = [[0,0,0,0,0,0,0,0,0,0],
@@ -29,7 +36,7 @@ tabuleiro2 = [[0,0,0,0,0,0,0,0,0,0],
 ]
 
 
-t2culto = [  [0,0,0,0,0,0,0,0,0,0],
+t2jogador = [ [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
@@ -39,6 +46,18 @@ t2culto = [  [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
+]
+
+t2computador =[[0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
 ]
 
 #Tamanho do Tabuleiro
@@ -73,18 +92,25 @@ def selecao(modo):
             Linha = int(input("Digite a linha em que você quer jogar: 1-5: "))
             Coluna = int(input("Digite a coluna em que você quer jogar: 1-10: "))
             print()
-            toculto[Linha - 1][Coluna - 1] = "X"
-        for i in range(len(toculto)):
-            print(toculto[i])
+            tjogador[Linha - 1][Coluna - 1] = "X"
+        for i in range(5):
+            Linha = random.randint(1,5)
+            Coluna = random.randint(1,5)
+            tcomputador[Linha - 1][Coluna - 1] = "X"
+        
     elif modo == 2:
         for i in range(5):
-            Linha = int(input("Digite a linha em que você quer jogar: 1-5: "))
+            Linha = int(input("Digite a linha em que você quer jogar: 1-10: "))
             Coluna = int(input("Digite a coluna em que você quer jogar: 1-10: "))
             print()
-            t2culto[Linha - 1][Coluna - 1] = "X"
-        for i in range(len(t2culto)):
-            print(t2culto[i])
-
-
+            t2jogador[Linha - 1][Coluna - 1] = "X"
+        for i in range(5):
+            Linha = random.randint(1,10)
+            Coluna = random.randint(1,10)
+            t2computador[Linha - 1][Coluna - 1] = "X"
+        # for i in range(len(t2computador)):
+        #     print(t2computador[i])
+    
+        
 selecao(menu())
 
