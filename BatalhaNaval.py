@@ -91,6 +91,10 @@ def selecao(modo):
         for i in range(5):
             Linha = int(input("Digite a linha em que você quer jogar: 1-5: "))
             Coluna = int(input("Digite a coluna em que você quer jogar: 1-10: "))
+            
+          
+                
+        
             print()
             tjogador[Linha - 1][Coluna - 1] = "X"
         for i in range(5):
