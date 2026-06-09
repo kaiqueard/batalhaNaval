@@ -170,21 +170,23 @@ def selecao(modo):
         
 
 #Fazendo o ataque
-def ataquej(modo):
+def ataque_jogador(modo):
     if modo == 1:
         for i in range(len(tabuleiro)):
             print(tabuleiro[i])
         Linha = int(input("Digite a linha que você quer atacar: 1-5: "))
-        while Linha < 1 or Linha > 10:
+        while Linha < 1 or Linha > 5:
                  Linha = int(input("Digite CORRETAMENTE a linha que você quer atacar: 1-5: "))
-
+        print()
         Coluna = int(input("Digite a coluna que você quer atacar: 1-10: "))
         while Coluna < 1 or Coluna > 10:
                 Coluna = int(input("Digite CORRETAMENTE a coluna que você quer atacar: 1-10: "))
         print()
         if tcomputador[Linha - 1][Coluna - 1] == "B":
+            tabuleiro[Linha - 1][Coluna - 1] == "X"
             return True
         else:
+            tabuleiro[Linha - 1][Coluna - 1] == "N"
             return False
     if modo == 2:
         for i in range(len(tabuleiro2)):
@@ -203,20 +205,28 @@ def ataquej(modo):
             return False
 
 #Fazendo o ataque do pc
-def ataquec(modo):
+def ataque_computador(modo):
      if modo == 1:
           for i in range(len(tabuleiro)):
             Linha = random.randint(1,5)
             Coluna = random.randint(1,10)
-            if tcomputador[Linha - 1][Coluna - 1] == "B":
+            print()
+            print("Computador atacou LINHA: ", Linha," e COLUNA: ",Coluna)
+            print()
+            if tjogador[Linha - 1][Coluna - 1] == "B":
+                tjogador[Linha - 1][Coluna - 1] == "X"
                 return True
             else:
+                 tjogador[Linha - 1][Coluna - 1] == "N"
                  return False
      if modo == 2:
           for i in range(len(tabuleiro2)):
             Linha = random.randint(1,10)
             Coluna = random.randint(1,10)
-            if tcomputador[Linha - 1][Coluna - 1] == "B":
+            print()
+            print("Computador atacou LINHA: ",Linha," e COLUNA: ",Coluna)
+            print()
+            if t2jogador[Linha - 1][Coluna - 1] == "B":
                 tabuleiro2[Linha - 1][Coluna - 1] == "X"
                 return True
             else:
@@ -226,20 +236,34 @@ def ataquec(modo):
 # Rodada
 def rodada(modo):
      if modo == 1:
+        print("--------------------------------")
+        print("          SEU TABULEIRO")
+        print("--------------------------------")
         for linha in range(len(tabuleiro)):
-            print(tabuleiro[linha])          
-        if ataquej(modo) == True:
+            print(tjogador[linha])    
+        print("--------------------------------")
+        print("          TABULEIRO ADVERSÁRIO")
+        print("--------------------------------")
+        for linha in range(len(tabuleiro)):
+            print(tabuleiro[linha])
+        #Rodada do jogador
+        if ataque_jogador(modo) == True:
             print("Fogo! Você acertou!\nVez do computador:")
             quantidade_embarcaçoes[0] -= 1
+            ataque_jogador(modo)
         else:
             print("Água! Você errou.\nVez do computador:")
-        if ataquec(modo) == True:
+        #Rodada do computador
+        if ataque_computador(modo) == True:
             print("Fogo! O computador acertou!\nSua vez:")
             quantidade_embarcaçoes[1] -= 1
+            ataque_computador(modo)
         else:
             print("Água! O computador errou.\nSua vez:")
         if quantidade_embarcaçoes[0] != 0 or quantidade_embarcaçoes[1] != 0:
             rodada(modo)
+        else:
+            verificacao()
 
 
 rodada(selecao(menu()))
