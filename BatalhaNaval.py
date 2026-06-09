@@ -97,6 +97,8 @@ c2feedback =[  [0,0,0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0,0,0],
 ]
+#contadores
+quantidade_embarcaçoes = [5, 5]
 
 #Tamanho do Tabuleiro
 def menu():
@@ -143,6 +145,7 @@ def selecao(modo):
             Linha = random.randint(1,5)
             Coluna = random.randint(1,5)
             tcomputador[Linha - 1][Coluna - 1] = "B"
+        return 1
         
     elif modo == 2:
         for i in range(5):
@@ -160,25 +163,90 @@ def selecao(modo):
             Linha = random.randint(1,10)
             Coluna = random.randint(1,10)
             t2computador[Linha - 1][Coluna - 1] = "B"
+        return 2
         # for i in range(len(t2computador)):
         #     print(t2computador[i])
     
         
-selecao(menu())
-
-#rodada
-def rodada():
-
-#Mostrando o tabuleiro de feedback
-def feedback():
 
 #Fazendo o ataque
-def ataquej():
+def ataquej(modo):
+    if modo == 1:
+        for i in range(len(tabuleiro)):
+            print(tabuleiro[i])
+        Linha = int(input("Digite a linha que você quer atacar: 1-5: "))
+        while Linha < 1 or Linha > 10:
+                 Linha = int(input("Digite CORRETAMENTE a linha que você quer atacar: 1-5: "))
+
+        Coluna = int(input("Digite a coluna que você quer atacar: 1-10: "))
+        while Coluna < 1 or Coluna > 10:
+                Coluna = int(input("Digite CORRETAMENTE a coluna que você quer atacar: 1-10: "))
+        print()
+        if tcomputador[Linha - 1][Coluna - 1] == "B":
+            return True
+        else:
+            return False
+    if modo == 2:
+        for i in range(len(tabuleiro2)):
+            print(tabuleiro[i])
+        Linha = int(input("Digite a linha que você quer atacar: 1-10: "))
+        while Linha < 1 or Linha > 10:
+                 Linha = int(input("Digite CORRETAMENTE a linha que você quer atacar: 1-10: "))
+
+        Coluna = int(input("Digite a coluna que você quer atacar: 1-10: "))
+        while Coluna < 1 or Coluna > 10:
+                Coluna = int(input("Digite CORRETAMENTE a coluna que você quer atacar: 1-10: "))
+        print()
+        if t2computador[Linha - 1][Coluna - 1] == "B":
+            return True
+        else:
+            return False
 
 #Fazendo o ataque do pc
-def ataquec():
+def ataquec(modo):
+     if modo == 1:
+          for i in range(len(tabuleiro)):
+            Linha = random.randint(1,5)
+            Coluna = random.randint(1,10)
+            if tcomputador[Linha - 1][Coluna - 1] == "B":
+                return True
+            else:
+                 return False
+     if modo == 2:
+          for i in range(len(tabuleiro2)):
+            Linha = random.randint(1,10)
+            Coluna = random.randint(1,10)
+            if tcomputador[Linha - 1][Coluna - 1] == "B":
+                tabuleiro2[Linha - 1][Coluna - 1] == "X"
+                return True
+            else:
+                 tabuleiro2[Linha - 1][Coluna - 1] == "N"
+                 return False
 
-#verificando a vitoria
-def verificacao():
+# Rodada
+def rodada(modo):
+     if modo == 1:
+        for linha in range(len(tabuleiro)):
+            print(tabuleiro[linha])          
+        if ataquej(modo) == True:
+            print("Fogo! Você acertou!\nVez do computador:")
+            quantidade_embarcaçoes[0] -= 1
+        else:
+            print("Água! Você errou.\nVez do computador:")
+        if ataquec(modo) == True:
+            print("Fogo! O computador acertou!\nSua vez:")
+            quantidade_embarcaçoes[1] -= 1
+        else:
+            print("Água! O computador errou.\nSua vez:")
+        if quantidade_embarcaçoes[0] != 0 or quantidade_embarcaçoes[1] != 0:
+            rodada(modo)
 
-#fazer a rodada (mostrar feedback, fazer ataque, verificar, e repetir pro adversário)
+
+rodada(selecao(menu()))
+
+# #Mostrando o tabuleiro de feedback
+# def feedback():
+
+# #verificando a vitoria
+# def verificacao():
+# fazer a rodada (mostrar feedback, fazer ataque, verificar, e repetir pro adversário)
