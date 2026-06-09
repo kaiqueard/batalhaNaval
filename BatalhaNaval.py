@@ -16,7 +16,21 @@ tjogador = [  [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
               ]
 
+jfeedback = [ [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              ]
+
 tcomputador = [[0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+              ]
+
+cfeedback = [  [0,0,0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0,0,0],
@@ -48,7 +62,31 @@ t2jogador = [ [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
 ]
 
+j2feedback = [[0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0,0,0,0],
+]
+
 t2computador =[[0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+               [0,0,0,0,0,0,0,0,0,0],
+]
+
+c2feedback =[  [0,0,0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0,0,0],
@@ -79,10 +117,12 @@ def menu():
 #Mostrando o Tabuleiro
 def selecao(modo):
     if modo == 1:
+        print("          TABULEIRO")
         for i in range(len(tabuleiro)):
             print(tabuleiro[i])
             
     elif modo == 2:
+        print("          TABULEIRO")
         for i in range(len(tabuleiro2)):
             print(tabuleiro2[i])
 
@@ -90,12 +130,14 @@ def selecao(modo):
     if modo == 1:
         for i in range(5):
             Linha = int(input("Digite a linha em que você quer jogar: 1-5: "))
+            while Linha < 1 or Linha > 5:
+                Linha = int(input("Digite CORRETAMENTE a linha em que você quer jogar: 1-5: "))
+
             Coluna = int(input("Digite a coluna em que você quer jogar: 1-10: "))
-            
-          
-                
-        
+            while Coluna < 1 or Coluna > 10:
+                Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer jogar: 1-10: "))
             print()
+
             tjogador[Linha - 1][Coluna - 1] = "X"
         for i in range(5):
             Linha = random.randint(1,5)
@@ -105,8 +147,14 @@ def selecao(modo):
     elif modo == 2:
         for i in range(5):
             Linha = int(input("Digite a linha em que você quer jogar: 1-10: "))
+            while Linha < 1 or Linha > 10:
+                 Linha = int(input("Digite CORRETAMENTE a linha em que você quer jogar: 1-10: "))
+
             Coluna = int(input("Digite a coluna em que você quer jogar: 1-10: "))
+            while Coluna < 1 or Coluna > 10:
+                Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer jogar: 1-10: "))
             print()
+
             t2jogador[Linha - 1][Coluna - 1] = "X"
         for i in range(5):
             Linha = random.randint(1,10)
@@ -117,4 +165,6 @@ def selecao(modo):
     
         
 selecao(menu())
+
+
 
