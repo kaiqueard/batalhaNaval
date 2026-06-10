@@ -182,7 +182,12 @@ def ataque_jogador(modo):
         while tabuleiro[Linha - 1][Coluna - 1] == "X" or tabuleiro[Linha - 1][Coluna - 1] == "N":
             print("Você já atacou essa posição! Escolha outra.")
             Linha = int(input("Digite a linha que você quer atacar: 1-5: "))
+            while Linha < 1 or Linha > 5:
+                Linha = int(input("Digite CORRETAMENTE a linha que você quer atacar: 1-5: "))
+
             Coluna = int(input("Digite a coluna que você quer atacar: 1-10: "))
+            while Coluna < 1 or Coluna > 10:
+                 Coluna = int(input("Digite CORRETAMENTE a coluna que você quer atacar: 1-10: "))
                 
         print()
         if tabuleiro_computador[Linha - 1][Coluna - 1] == "B":
@@ -199,11 +204,18 @@ def ataque_jogador(modo):
         Coluna = int(input("Digite a coluna que você quer atacar: 1-10: "))
         while Coluna < 1 or Coluna > 10:
                 Coluna = int(input("Digite CORRETAMENTE a coluna que você quer atacar: 1-10: "))
+
         while tabuleiro2[Linha - 1][Coluna - 1] == "X" or tabuleiro2[Linha - 1][Coluna - 1] == "N":
             print("Você já atacou essa posição! Escolha outra.")
             Linha = int(input("Digite a linha que você quer atacar: 1-10: "))
+            while Linha < 1 or Linha > 10:
+                Linha = int(input("Digite a linha que você quer atacar: 1-10: "))
+
             Coluna = int(input("Digite a coluna que você quer atacar: 1-10: "))
+            while Coluna < 1 or Coluna > 10:
+                 Coluna = int(input("Digite CORRETAMENTE a coluna que você quer atacar: 1-10: "))
         print()
+
         if tabuleiro2computador[Linha - 1][Coluna - 1] == "B":
             tabuleiro2[Linha -1][Coluna - 1] = "X"
             return True
@@ -264,57 +276,62 @@ def rodada(modo):
         print("--------------------------------")
         for linha in range(len(tabuleiro)):
             print(tabuleiro[linha])    
+        print("Barcos inimigos restantes: ", quantidade_embarcaçoes[1])
         print("--------------------------------")
         print("          TABULEIRO ADVERSÁRIO")
         print("--------------------------------")
         for linha in range(len(computadorfeedback)):
             print(computadorfeedback[linha])
+        print("Barcos inimigos restantes: ", quantidade_embarcaçoes[0])
             
         #Rodada do jogador
         if ataque_jogador(modo) == True:
-            while ataque_jogador(modo) == True:
-                print("Fogo! Você acertou!\n Jogue novamente: ")
-                quantidade_embarcaçoes[1] -= 1
-                ataque_jogador(modo)
+            print("Fogo! Você acertou!\n Vez do computador: ")
+            quantidade_embarcaçoes[1] -= 1
+            print("Barcos do computador restantes: ", quantidade_embarcaçoes[1])
+
         else:
             print("Água! Você errou.\nVez do computador:")
 
         #Rodada do computador
         if ataque_computador(modo) == True:
-            while ataque_computador(modo) == True:
-                print("Fogo! O computador acertou!\nComputador novamente")
-                quantidade_embarcaçoes[0] -= 1
-                ataque_computador(modo)
+            print("Fogo! O computador acertou!")
+            quantidade_embarcaçoes[0] -= 1
+            print("Barcos do jogador restantes: ", quantidade_embarcaçoes[0])
+            
         else:
             print("Água! O computador errou.\nSua vez:")
         if not verificacao():
             rodada(modo)
+
     elif modo == 2:
         print("--------------------------------")
         print("          SEU TABULEIRO")
         print("--------------------------------")
         for linha in range(len(tabuleiro2)):
-            print(tabuleiro2[linha])    
+            print(tabuleiro2[linha])  
+        print("barcos inimigos restantes: ", quantidade_embarcaçoes[1])
         print("--------------------------------")
         print("    TABULEIRO ADVERSÁRIO")
         print("--------------------------------")
         for linha in range(len(computador2feedback)):
             print(computador2feedback[linha])
+        print("Barcos inimigos restantes: ", quantidade_embarcaçoes[0])
         #Rodada do jogador
         if ataque_jogador(modo) == True:
-            while ataque_jogador(modo) == True:
-                print("Fogo! Você acertou!\n Jogue novamente: ")
-                quantidade_embarcaçoes[1] -= 1
-                ataque_jogador(modo)
+            print("Fogo! Você acertou!\n Vez do computador: ")
+            quantidade_embarcaçoes[1] -= 1
+            print("Barcos do computador restantes: ", quantidade_embarcaçoes[1])
+            
         else:
             print("Água! Você errou.\nVez do computador:")
 
         #Rodada do computador
         if ataque_computador(modo) == True:
-            while ataque_computador(modo) == True:
-                print("Fogo! O computador acertou!\nComputador novamente:")
-                quantidade_embarcaçoes[0] -= 1
-                ataque_computador(modo)
+            print("Fogo! O computador acertou!")
+            quantidade_embarcaçoes[0] -= 1
+            print("Barcos do jogador restantes: ", quantidade_embarcaçoes[0])
+                
         else:
             print("Água! O computador errou.\nSua vez:")
         if not verificacao():
