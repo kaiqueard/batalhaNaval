@@ -259,11 +259,13 @@ def ataque_computador(modo):
 #verificando a vitoria
 def verificacao():
     if quantidade_embarcaçoes[0] == 0:
-        print("O computador venceu! \n Muito obrigado por jogar! \n Programa feito por Kaique & Davi")
+        print()
+        print("O Computador venceu! \n Muito obrigado por jogar! \n Programa feito por Kaique & Davi")
         return True
 
     if quantidade_embarcaçoes[1] == 0:
-        print("Jogador venceu! \n Muito obrigado por jogar! \n Programa feito por Kaique & Davi")
+        print()
+        print("O Jogador venceu! \n Muito obrigado por jogar! \n Programa feito por Kaique & Davi")
         return True
     else:
         return False
@@ -272,26 +274,26 @@ def verificacao():
 def rodada(modo):
     if modo == 1:
         print("--------------------------------")
-        print("          SEU TABULEIRO")
+        print("      TABULEIRO ADVERSÁRIO")
         print("--------------------------------")
         for linha in range(len(tabuleiro)):
             print(tabuleiro[linha])    
-        print("Barcos inimigos restantes: ", quantidade_embarcaçoes[1])
+        print("Barcos do computador restantes: ", quantidade_embarcaçoes[1])
         print("--------------------------------")
-        print("          TABULEIRO ADVERSÁRIO")
+        print("         SEU TABULEIRO")
         print("--------------------------------")
         for linha in range(len(computadorfeedback)):
             print(computadorfeedback[linha])
-        print("Barcos inimigos restantes: ", quantidade_embarcaçoes[0])
+        print("Barcos do jogador restantes: ", quantidade_embarcaçoes[0])
             
         #Rodada do jogador
         if ataque_jogador(modo) == True:
-            print("Fogo! Você acertou!\n Vez do computador: ")
+            print("Fogo! Você acertou! ")
             quantidade_embarcaçoes[1] -= 1
             print("Barcos do computador restantes: ", quantidade_embarcaçoes[1])
 
         else:
-            print("Água! Você errou.\nVez do computador:")
+            print("Água! Você errou.")
 
         #Rodada do computador
         if ataque_computador(modo) == True:
@@ -300,31 +302,32 @@ def rodada(modo):
             print("Barcos do jogador restantes: ", quantidade_embarcaçoes[0])
             
         else:
-            print("Água! O computador errou.\nSua vez:")
-        if not verificacao():
+            print("Água! O computador errou.")
+        if verificacao() == False:
             rodada(modo)
+             
 
     elif modo == 2:
         print("--------------------------------")
-        print("          SEU TABULEIRO")
+        print("       TABULEIRO ADVERSÁRIO")
         print("--------------------------------")
         for linha in range(len(tabuleiro2)):
             print(tabuleiro2[linha])  
-        print("barcos inimigos restantes: ", quantidade_embarcaçoes[1])
+        print("barcos do computador restantes: ", quantidade_embarcaçoes[1])
         print("--------------------------------")
-        print("    TABULEIRO ADVERSÁRIO")
+        print("          SEU TABULEIRO")
         print("--------------------------------")
         for linha in range(len(computador2feedback)):
             print(computador2feedback[linha])
-        print("Barcos inimigos restantes: ", quantidade_embarcaçoes[0])
+        print("Barcos do jogador restantes: ", quantidade_embarcaçoes[0])
         #Rodada do jogador
         if ataque_jogador(modo) == True:
-            print("Fogo! Você acertou!\n Vez do computador: ")
+            print("Fogo! Você acertou!")
             quantidade_embarcaçoes[1] -= 1
             print("Barcos do computador restantes: ", quantidade_embarcaçoes[1])
             
         else:
-            print("Água! Você errou.\nVez do computador:")
+            print("Água! Você errou.")
 
         #Rodada do computador
         if ataque_computador(modo) == True:
@@ -333,8 +336,8 @@ def rodada(modo):
             print("Barcos do jogador restantes: ", quantidade_embarcaçoes[0])
                 
         else:
-            print("Água! O computador errou.\nSua vez:")
-        if not verificacao():
+            print("Água! O computador errou.")
+        if verificacao() == False:
             rodada(modo)
          
          
