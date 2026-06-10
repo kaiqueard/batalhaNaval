@@ -291,6 +291,8 @@ def rodada(modo):
             print("Fogo! Você acertou! ")
             quantidade_embarcaçoes[1] -= 1
             print("Barcos do computador restantes: ", quantidade_embarcaçoes[1])
+            if verificacao() == True:
+                return
 
         else:
             print("Água! Você errou.")
@@ -320,11 +322,14 @@ def rodada(modo):
         for linha in range(len(computador2feedback)):
             print(computador2feedback[linha])
         print("Barcos do jogador restantes: ", quantidade_embarcaçoes[0])
+
         #Rodada do jogador
         if ataque_jogador(modo) == True:
             print("Fogo! Você acertou!")
             quantidade_embarcaçoes[1] -= 1
             print("Barcos do computador restantes: ", quantidade_embarcaçoes[1])
+            if verificacao() == True:
+                return
             
         else:
             print("Água! Você errou.")
