@@ -187,7 +187,6 @@ def ataque_jogador(modo):
         print()
         if tcomputador[Linha - 1][Coluna - 1] == "B":
             tabuleiro[Linha - 1][Coluna - 1] = "X"
-            quantidade_embarcaçoes[0] -= 1
             return True
         else:
             tabuleiro[Linha - 1][Coluna - 1] = "N"
@@ -273,8 +272,10 @@ def rodada(modo):
             
         #Rodada do jogador
         if ataque_jogador(modo) == True:
-            print("Fogo! Você acertou!\n Jogue novamente: ")
-            return ataque_jogador(modo)
+            while ataque_jogador(modo) == True:
+                print("Fogo! Você acertou!\n Jogue novamente: ")
+                quantidade_embarcaçoes[0] -= 1
+                ataque_jogador(modo)
         else:
             print("Água! Você errou.\nVez do computador:")
 
