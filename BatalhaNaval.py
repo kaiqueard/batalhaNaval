@@ -92,15 +92,9 @@ def menu():
     "\n2 - Tabuleiro 10x10" \
     "\n"
     ))
-    while modo!=2 and modo!=1:
+    if modo!=2 and modo!=1:
         print("Digite corretamente!")
-        modo = int(input(
-        "Digite o número equivalente a sua jogada: " \
-    "\n1 - Tabuleiro 5x10"
-    "\n2 - Tabuleiro 10x10" \
-    "\n"
-    ))
-        
+        return menu()
     else:
         return modo
 
@@ -193,6 +187,7 @@ def ataque_jogador(modo):
         print()
         if tcomputador[Linha - 1][Coluna - 1] == "B":
             tabuleiro[Linha - 1][Coluna - 1] = "X"
+            quantidade_embarcaçoes[0] -= 1
             return True
         else:
             tabuleiro[Linha - 1][Coluna - 1] = "N"
@@ -229,10 +224,10 @@ def ataque_computador(modo):
         print("Computador atacou LINHA: ", Linha," e COLUNA: ",Coluna)
         print()
         if tjogador[Linha - 1][Coluna - 1] == "B":
-                computadorfeedback[Linha - 1][Coluna - 1] = "X"
+                tjogador[Linha - 1][Coluna - 1] = "X"
                 return True
         else:
-                 computadorfeedback[Linha - 1][Coluna - 1] = "N"
+                 tjogador[Linha - 1][Coluna - 1] = "N"
                  return False
      if modo == 2:
             Linha = random.randint(1,10)
@@ -269,24 +264,23 @@ def rodada(modo):
         print("          SEU TABULEIRO")
         print("--------------------------------")
         for linha in range(len(tabuleiro)):
-            print(tabuleiro[linha])    
+            print(tjogador[linha])    
         print("--------------------------------")
         print("          TABULEIRO ADVERSÁRIO")
         print("--------------------------------")
         for linha in range(len(computadorfeedback)):
-            print(computadorfeedback[linha])
+            print(tabuleiro[linha])
             
         #Rodada do jogador
         if ataque_jogador(modo) == True:
             print("Fogo! Você acertou!\n Jogue novamente: ")
-            quantidade_embarcaçoes[0] -= 1
-            ataque_jogador(modo)
+            return ataque_jogador(modo)
         else:
             print("Água! Você errou.\nVez do computador:")
 
         #Rodada do computador
         if ataque_computador(modo) == True:
-            print("Fogo! O computador acertou!\nSua vez:")
+            print("Fogo! O computador acertou!\nComputador novamente")
             quantidade_embarcaçoes[1] -= 1
             ataque_computador(modo)
         else:
@@ -314,7 +308,7 @@ def rodada(modo):
 
         #Rodada do computador
         if ataque_computador(modo) == True:
-            print("Fogo! O computador acertou!\nSua vez:")
+            print("Fogo! O computador acertou!\nComputador novamente:")
             quantidade_embarcaçoes[1] -= 1
             ataque_computador(modo)
         else:
