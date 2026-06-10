@@ -9,19 +9,19 @@ tabuleiro = [ [0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
               ]
 
-tjogador = [  [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              ]
+tabuleiro_jogador = [  [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+]
 
 
-tcomputador = [[0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
+tabuleiro_computador = [[0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0],
               ]
 
 computadorfeedback = [  [0,0,0,0,0,0,0,0,0,0],
@@ -44,41 +44,41 @@ tabuleiro2 = [[0,0,0,0,0,0,0,0,0,0],
 ]
 
 
-t2jogador = [ [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0],
+tabuleiro2jogador = [ [0,0,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0,0,0,0],
 ]
 
 
-t2computador =[[0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
+tabuleiro2computador =[[0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
 ]
 
-c2feedback =[  [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0,0,0],
+computador2feedback =[ [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0,0,0,0],
 ]
 #contadores
 quantidade_embarcaçoes = [5, 5]
@@ -122,19 +122,19 @@ def selecao(modo):
             while Coluna < 1 or Coluna > 10:
                 Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer jogar: 1-10: "))
             print()
-            while tjogador[Linha - 1][Coluna - 1] == "B":
+            while tabuleiro_jogador[Linha - 1][Coluna - 1] == "B":
                 print("Você já tem um barco aí! Escolha outra posição.")
                 Linha = int(input("Digite CORRETAMENTE a linha em que você quer jogar: 1-5: "))
                 Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer jogar: 1-10: "))
-            tjogador[Linha - 1][Coluna - 1] = "B"
+            tabuleiro_jogador[Linha - 1][Coluna - 1] = "B"
 
         for i in range(5):
             Linha = random.randint(1,5)
             Coluna = random.randint(1,5)
-            while tcomputador[Linha - 1][Coluna -1] == "B":
+            while tabuleiro_computador[Linha - 1][Coluna -1] == "B":
                 Linha = random.randint(1,5)
                 Coluna = random.randint(1,5)
-            tcomputador[Linha - 1][Coluna - 1] = "B"
+            tabuleiro_computador[Linha - 1][Coluna - 1] = "B"
         return 1
         
     elif modo == 2:
@@ -147,20 +147,20 @@ def selecao(modo):
             while Coluna < 1 or Coluna > 10:
                 Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer jogar: 1-10: "))
 
-            while t2jogador[Linha - 1][Coluna - 1] == "B":
+            while tabuleiro2jogador[Linha - 1][Coluna - 1] == "B":
                 print("Você já tem um barco aí! Escolha outra posição.")
                 Linha = int(input("Digite CORRETAMENTE a linha em que você quer jogar: 1-10: "))
                 Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer jogar: 1-10: "))    
             print()
 
-            t2jogador[Linha - 1][Coluna - 1] = "B"
+            tabuleiro2jogador[Linha - 1][Coluna - 1] = "B"
         for i in range(5):
             Linha = random.randint(1,10)
             Coluna = random.randint(1,10)
-            while t2computador[Linha - 1][Coluna -1] == "B":
+            while tabuleiro2computador[Linha - 1][Coluna -1] == "B":
                 Linha = random.randint(1,5)
                 Coluna = random.randint(1,5)
-            t2computador[Linha - 1][Coluna - 1] = "B"
+            tabuleiro2computador[Linha - 1][Coluna - 1] = "B"
         return 2
         # for i in range(len(t2computador)):
         #     print(t2computador[i])
@@ -185,7 +185,7 @@ def ataque_jogador(modo):
             Coluna = int(input("Digite a coluna que você quer atacar: 1-10: "))
                 
         print()
-        if tcomputador[Linha - 1][Coluna - 1] == "B":
+        if tabuleiro_computador[Linha - 1][Coluna - 1] == "B":
             tabuleiro[Linha - 1][Coluna - 1] = "X"
             return True
         else:
@@ -204,7 +204,7 @@ def ataque_jogador(modo):
             Linha = int(input("Digite a linha que você quer atacar: 1-10: "))
             Coluna = int(input("Digite a coluna que você quer atacar: 1-10: "))
         print()
-        if t2computador[Linha - 1][Coluna - 1] == "B":
+        if tabuleiro2computador[Linha - 1][Coluna - 1] == "B":
             tabuleiro2[Linha -1][Coluna - 1] = "X"
             return True
         else:
@@ -222,36 +222,36 @@ def ataque_computador(modo):
         print()
         print("Computador atacou LINHA: ", Linha," e COLUNA: ",Coluna)
         print()
-        if tjogador[Linha - 1][Coluna - 1] == "B":
-                tjogador[Linha - 1][Coluna - 1] = "X"
+        if tabuleiro_jogador[Linha - 1][Coluna - 1] == "B":
+                computadorfeedback[Linha - 1][Coluna - 1] = "X"
                 return True
         else:
-                 tjogador[Linha - 1][Coluna - 1] = "N"
+                 computadorfeedback[Linha - 1][Coluna - 1] = "N"
                  return False
      if modo == 2:
             Linha = random.randint(1,10)
             Coluna = random.randint(1,10)
-            while c2feedback[Linha - 1][Coluna - 1] == "X" or c2feedback[Linha - 1][Coluna - 1] == "N":
+            while computador2feedback[Linha - 1][Coluna - 1] == "X" or computador2feedback[Linha - 1][Coluna - 1] == "N":
                 Linha = random.randint(1, 10)
                 Coluna = random.randint(1, 10)
             print()
             print("Computador atacou LINHA: ",Linha," e COLUNA: ",Coluna)
             print()
-            if t2jogador[Linha - 1][Coluna - 1] == "B":
-                c2feedback[Linha - 1][Coluna - 1] = "X"
+            if tabuleiro2jogador[Linha - 1][Coluna - 1] == "B":
+                computador2feedback[Linha - 1][Coluna - 1] = "X"
                 return True
             else:
-                 c2feedback[Linha - 1][Coluna - 1] = "N"
+                 computador2feedback[Linha - 1][Coluna - 1] = "N"
                  return False
 
 #verificando a vitoria
 def verificacao():
     if quantidade_embarcaçoes[0] == 0:
-        print("O computador venceu! \n Muito obrigado por jogar! \n Programa feito por Kaique E Davi")
+        print("O computador venceu! \n Muito obrigado por jogar! \n Programa feito por Kaique & Davi")
         return True
 
     if quantidade_embarcaçoes[1] == 0:
-        print("Jogador venceu! \n Muito obrigado por jogar! \n Programa feito por Kaique E Davi")
+        print("Jogador venceu! \n Muito obrigado por jogar! \n Programa feito por Kaique & Davi")
         return True
     else:
         return False
@@ -263,27 +263,28 @@ def rodada(modo):
         print("          SEU TABULEIRO")
         print("--------------------------------")
         for linha in range(len(tabuleiro)):
-            print(tjogador[linha])    
+            print(tabuleiro[linha])    
         print("--------------------------------")
         print("          TABULEIRO ADVERSÁRIO")
         print("--------------------------------")
         for linha in range(len(computadorfeedback)):
-            print(tabuleiro[linha])
+            print(computadorfeedback[linha])
             
         #Rodada do jogador
         if ataque_jogador(modo) == True:
             while ataque_jogador(modo) == True:
                 print("Fogo! Você acertou!\n Jogue novamente: ")
-                quantidade_embarcaçoes[0] -= 1
+                quantidade_embarcaçoes[1] -= 1
                 ataque_jogador(modo)
         else:
             print("Água! Você errou.\nVez do computador:")
 
         #Rodada do computador
         if ataque_computador(modo) == True:
-            print("Fogo! O computador acertou!\nComputador novamente")
-            quantidade_embarcaçoes[1] -= 1
-            ataque_computador(modo)
+            while ataque_computador(modo) == True:
+                print("Fogo! O computador acertou!\nComputador novamente")
+                quantidade_embarcaçoes[0] -= 1
+                ataque_computador(modo)
         else:
             print("Água! O computador errou.\nSua vez:")
         if not verificacao():
@@ -295,23 +296,25 @@ def rodada(modo):
         for linha in range(len(tabuleiro2)):
             print(tabuleiro2[linha])    
         print("--------------------------------")
-        print("          TABULEIRO ADVERSÁRIO")
+        print("    TABULEIRO ADVERSÁRIO")
         print("--------------------------------")
-        for linha in range(len(c2feedback)):
-            print(c2feedback[linha])
+        for linha in range(len(computador2feedback)):
+            print(computador2feedback[linha])
         #Rodada do jogador
         if ataque_jogador(modo) == True:
-            print("Fogo! Você acertou!\n Jogue novamente: ")
-            quantidade_embarcaçoes[0] -= 1
-            ataque_jogador(modo)
+            while ataque_jogador(modo) == True:
+                print("Fogo! Você acertou!\n Jogue novamente: ")
+                quantidade_embarcaçoes[1] -= 1
+                ataque_jogador(modo)
         else:
             print("Água! Você errou.\nVez do computador:")
 
         #Rodada do computador
         if ataque_computador(modo) == True:
-            print("Fogo! O computador acertou!\nComputador novamente:")
-            quantidade_embarcaçoes[1] -= 1
-            ataque_computador(modo)
+            while ataque_computador(modo) == True:
+                print("Fogo! O computador acertou!\nComputador novamente:")
+                quantidade_embarcaçoes[0] -= 1
+                ataque_computador(modo)
         else:
             print("Água! O computador errou.\nSua vez:")
         if not verificacao():
