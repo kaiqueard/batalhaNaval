@@ -10,7 +10,7 @@ O jogo funciona no modo Jogador x Computador;
 Tem três modos de jogo:
 - Tabuleiro 5x10;
 - Tabuleiro 10x10;
-- Desafio.
+- Desafio 10x10.
 
 # Tabuleiros
 
@@ -20,7 +20,13 @@ Cada jogador tem 2 tabuleiros (por modo):
 
 # Desafio
 
-A fazer.
+Tabuleiro 10x10 com 5 embarcações de tamanhos diferentes (1 a 5 posições);
+
+Embarcação só afunda quando todas as suas posições forem atingidas;
+
+Ao afundar uma embarcação, o jogador ataca novamente;
+
+Vence quem afundar toda a frota inimiga primeiro.
 
 # Regras
 
