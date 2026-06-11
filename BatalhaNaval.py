@@ -94,7 +94,7 @@ def menu():
     
     modo = int(input(
         "Bem-vindo(a) ao Batalha Naval"
-        "\nDigite o número equivalente a sua jogada: " \
+        "\nDigite qual modo você deseja jogar: " \
     "\n1 - Tabuleiro 5x10"
     "\n2 - Tabuleiro 10x10" \
     "\n3 - Modo original(10x10 & Regras Especiais)\n"
@@ -139,6 +139,12 @@ def selecao(modo):
                 print("Você já tem um barco aí! Escolha outra posição.")
                 Linha = int(input("Digite CORRETAMENTE a linha em que você quer jogar: 1-5: "))
                 Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer jogar: 1-10: "))
+                while Linha < 1 or Linha > 5:
+                    Linha = int(input("Digite CORRETAMENTE a linha em que você quer jogar: 1-5: "))
+
+                Coluna = int(input("Digite a coluna em que você quer jogar: 1-10: "))
+                while Coluna < 1 or Coluna > 10:
+                    Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer jogar: 1-10: "))
             tabuleiro_jogador[Linha - 1][Coluna - 1] = "B"
 
         for i in range(5):
@@ -163,7 +169,11 @@ def selecao(modo):
             while tabuleiro2jogador[Linha - 1][Coluna - 1] == "B":
                 print("Você já tem um barco aí! Escolha outra posição.")
                 Linha = int(input("Digite CORRETAMENTE a linha em que você quer jogar: 1-10: "))
-                Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer jogar: 1-10: "))    
+                while Linha < 1 or Linha > 10:
+                    Linha = int(input("Digite CORRETAMENTE a linha em que você quer jogar: 1-10: "))
+                Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer jogar: 1-10: "))  
+                while Coluna < 1 or Coluna > 10:
+                    Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer jogar: 1-10: "))  
             print()
 
             tabuleiro2jogador[Linha - 1][Coluna - 1] = "B"
@@ -531,7 +541,7 @@ def rodada(modo):
                     return(modo)
                 
             else:
-                print("Água! Você errou.")
+                print("Água! Computador errou.")
                 joga_novamente = False
         if verificacao() == False:
             rodada(modo)
