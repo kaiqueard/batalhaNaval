@@ -337,32 +337,32 @@ def ataque_computador(modo):
         while computador2feedback[Linha - 1][Coluna - 1] == "X" or computador2feedback[Linha - 1][Coluna - 1] == "N":
             Linha = random.randint(1, 10)
             Coluna = random.randint(1, 10)
-            print()
-            print("Computador atacou LINHA: ",Linha," e COLUNA: ",Coluna)
-            print()
-            if tabuleiro2jogador[Linha - 1][Coluna - 1] == "P":
-                computador2feedback[Linha - 1][Coluna - 1] = "X"
-                porta_avioes[0] -= 1
-                return True
-            elif tabuleiro2jogador[Linha - 1][Coluna - 1] == "T":
-                computador2feedback[Linha - 1][Coluna - 1] = "X"
-                navio_tanque[0] -= 1
-                return True
-            elif tabuleiro2jogador[Linha - 1][Coluna - 1] == "C":
-                computador2feedback[Linha - 1][Coluna - 1] = "X"
-                contratorpedeiro[0] -= 1
-                return True
-            elif tabuleiro2jogador[Linha - 1][Coluna - 1] == "S":
-                computador2feedback[Linha - 1][Coluna - 1] = "X"
-                submarino[0] -= 1
-                return True
-            elif tabuleiro2jogador[Linha - 1][Coluna - 1] == "D":
-                computador2feedback[Linha - 1][Coluna - 1] = "X"
-                destroier[0] -= 1
-                return True
-            else:
-                 computador2feedback[Linha - 1][Coluna - 1] = "N"
-                 return False
+        print()
+        print("Computador atacou LINHA: ",Linha," e COLUNA: ",Coluna)
+        print()
+        if tabuleiro2jogador[Linha - 1][Coluna - 1] == "P":
+            computador2feedback[Linha - 1][Coluna - 1] = "X"
+            porta_avioes[0] -= 1
+            return True
+        elif tabuleiro2jogador[Linha - 1][Coluna - 1] == "T":
+            computador2feedback[Linha - 1][Coluna - 1] = "X"
+            navio_tanque[0] -= 1
+            return True
+        elif tabuleiro2jogador[Linha - 1][Coluna - 1] == "C":
+            computador2feedback[Linha - 1][Coluna - 1] = "X"
+            contratorpedeiro[0] -= 1
+            return True
+        elif tabuleiro2jogador[Linha - 1][Coluna - 1] == "S":
+            computador2feedback[Linha - 1][Coluna - 1] = "X"
+            submarino[0] -= 1
+            return True
+        elif tabuleiro2jogador[Linha - 1][Coluna - 1] == "D":
+            computador2feedback[Linha - 1][Coluna - 1] = "X"
+            destroier[0] -= 1
+            return True
+        else:
+                computador2feedback[Linha - 1][Coluna - 1] = "N"
+                return False
 
 #verificando a vitoria
 def verificacao():
@@ -486,11 +486,11 @@ def rodada(modo):
                     quantidade_embarcaçoes[1] -= 1
                     joga_novamente = True
                 elif submarino[1] == 0:
-                    print("\Submarino destruído! Jogue novamente")
+                    print("\nSubmarino destruído! Jogue novamente")
                     quantidade_embarcaçoes[1] -= 1
                     joga_novamente = True
                 elif destroier[1] == 0:
-                    print("\Destroier destruído! Jogue novamente")
+                    print("\nDestroier destruído! Jogue novamente")
                     quantidade_embarcaçoes[1] -= 1
                     joga_novamente = True
                 print("Barcos do computador restantes: ", quantidade_embarcaçoes[1])
@@ -519,11 +519,11 @@ def rodada(modo):
                     quantidade_embarcaçoes[0] -= 1
                     joga_novamente = True
                 elif submarino[0] == 0:
-                    print("\Submarino destruído! Computador novamente.")
+                    print("\nSubmarino destruído! Computador novamente.")
                     quantidade_embarcaçoes[0] -= 1
                     joga_novamente = True
                 elif destroier[0] == 0:
-                    print("\Destroier destruído! COmputador novamente.")
+                    print("\nDestroier destruído! COmputador novamente.")
                     quantidade_embarcaçoes[0] -= 1
                     joga_novamente = True
                 print("Barcos do jogador restantes: ", quantidade_embarcaçoes[0])
@@ -780,6 +780,7 @@ def selecao_barcos_pc(x):
                     verificador = True    
                 else: #Se uma das posições conflitar, o loop retorna para selecionar novamente
                     verificador = False
+                    verificador2 = 0
                 
             if orientacao == 2:
                 Linha = random.randint(1,7)
@@ -791,6 +792,7 @@ def selecao_barcos_pc(x):
                     verificador = True    
                 else:
                     verificador = False
+                    verificador2 = 0
 
 
         if orientacao == 1: #Após ver que está 100% livre, ele sai do loop e então preenche as posições
@@ -817,6 +819,7 @@ def selecao_barcos_pc(x):
                     verificador = True    
                 else: #Algum preenchido, refazer escolhas
                     verificador = False
+                    verificador2 = 0
             if orientacao == 2:
                 Linha = random.randint(1,8)
                 Coluna = random.randint(1,10)
@@ -827,6 +830,7 @@ def selecao_barcos_pc(x):
                     verificador = True    
                 else: #Algum preenchido, refazer escolhas
                     verificador = False
+                    verificador2 = 0
 
         if orientacao == 1: #Preencher o tabuleiro conforme orientação
             for i in range(3):
@@ -851,6 +855,7 @@ def selecao_barcos_pc(x):
                     verificador = True    
                 else:
                     verificador = False
+                    verificador2 = 0
             if orientacao == 2:
                 Linha = random.randint(1,9)
                 Coluna = random.randint(1,10)
@@ -861,6 +866,7 @@ def selecao_barcos_pc(x):
                     verificador = True    
                 else: #Algum preenchido, refazer escolhas
                     verificador = False
+                    verificador2 = 0
         if orientacao == 1: #Preencher o tabuleiro conforme orientação
             for i in range(2):
                 tabuleiro2computador[Linha - 1][Coluna - 1 + i] = "S"
@@ -882,6 +888,7 @@ def selecao_barcos_pc(x):
                     verificador = True    
             else:  #Algum preenchido, refazer escolhas
                 verificador = False
+                verificador2 = 0
 
         tabuleiro2computador[Linha - 1][Coluna - 1] = "D" #Preencher o tabuleiro
 
