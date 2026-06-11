@@ -755,7 +755,7 @@ def selecao_barcos_pc(x):
         orientacao = random.randint(1,2)  #Escolher orientação
         if orientacao == 1:
             Linha = random.randint(1,10)
-            Coluna = random.randint(1-6)
+            Coluna = random.randint(1,6)
             for i in range(5):
                 tabuleiro2computador[Linha - 1][Coluna - 1 + i] = "P"                #Adicionar ao tabuleiro
         if orientacao == 2:
