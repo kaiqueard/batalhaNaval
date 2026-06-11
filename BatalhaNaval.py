@@ -181,7 +181,9 @@ def selecao(modo):
         "Submarino        - 2 posições\n"
         "Destroier        - 1 posição")
         for i in range(5):
-            selecao_barcos(i) 
+            selecao_barcos_jogador(i)
+        for i in range(5):
+            selecao_barcos_pc(i)
         return 3
     
     
@@ -371,7 +373,7 @@ def rodada(modo):
 #--------------------------------
 #     DESAFIO, modo original
 #--------------------------------         
-def selecao_barcos(x):
+def selecao_barcos_jogador(x):
     if x == 0: #Embarcação 5
         print("Porta-aviões, embarcação de 5 posições")
         orientacao = int(input("Escolha a orientaçã\n1 - Horizontal\n2 - Vertical\n"))  #Escolher orientação
@@ -537,7 +539,154 @@ def selecao_barcos(x):
         for i in range(len(tabuleiro2jogador)):
             print(tabuleiro2jogador[i]) #Printar atual tabuleiro
 
+def selecao_barcos_pc(x):
+    if x == 0: #Embarcação 5
+        orientacao = random.randint(1,2)  #Escolher orientação
+        if orientacao == 1:
+            Linha = random.randint(1,10)
+            Coluna = random.randint(1-6)
+            for i in range(5):
+                tabuleiro2[Linha - 1][Coluna - 1 + i] = "P"                #Adicionar ao tabuleiro
+        if orientacao == 2:
+            Linha = random.randint(1-6)
+            Coluna = random.randint(1,10)
+            for i in range(5):
+                tabuleiro2[Linha - 1 + i][Coluna - 1] = "P"
 
+    elif x == 1: #Embarcação 4
+        verificador = False
+        verificador2 = 0
+        while verificador == False:           #Loop para verificar se não está ocupando uma posição preenchida
+
+            orientacao = random.randint(1,2)
+            if orientacao == 1:
+                Linha = random.randint(1,10)
+                Coluna = random.randint(1,7)
+                for i in range(4): #Vai verificar todas as posições para ver se não está vazia
+                    if tabuleiro2[Linha - 1][Coluna - 1 + i] == 0:
+                        verificador2 += 1
+                if verificador2 == 4: #Se estiver totalmente livre, verificador2 resulta correto(nesse caso 4) e sai do loop
+                    verificador = True    
+                else: #Se uma das posições conflitar, o loop retorna para selecionar novamente
+                    verificador = False
+                
+            if orientacao == 2:
+                Linha = random.randint(1,7)
+                Coluna = random.randint(1,10)
+                for i in range(4):
+                    if tabuleiro2[Linha - 1 + i][Coluna - 1] == 0:
+                        verificador2 += 1
+                if verificador2 == 4:
+                    verificador = True    
+                else:
+                    verificador = False
+
+
+        if orientacao == 1: #Após ver que está 100% livre, ele sai do loop e então preenche as posições
+            for i in range(4):
+                tabuleiro2[Linha - 1][Coluna - 1 + i] = "T"
+        elif orientacao == 2:
+            for i in range(4):
+                tabuleiro2[Linha - 1 + i][Coluna - 1] = "T"
+
+    elif x == 2: #Embarcação 3
+        verificador = False
+        verificador2 = 0
+        while verificador == False: #Loop verificador
+
+            orientacao = random.randint(1,2) 
+            
+            if orientacao == 1:
+                Linha = random.randint(1,10)
+                Coluna = random.randint(1,8)
+                for i in range(3): 
+                    if tabuleiro2[Linha - 1][Coluna - 1 + i] == 0: #Verificar posições
+                        verificador2 += 1
+                if verificador2 == 3: #Todos 0(Vazio), soma resulta correto, loop encerra
+                    verificador = True    
+                else: #Algum preenchido, refazer escolhas
+                    verificador = False
+            if orientacao == 2:
+                Linha = random.randint(1,8)
+                Coluna = random.randint(1,10)
+                for i in range(3):
+                    if tabuleiro2[Linha - 1 + i][Coluna - 1] == 0: #Verificar posições
+                        verificador2 += 1
+                if verificador2 == 3: #Todos 0(Vazio), soma resulta correto, loop encerra
+                    verificador = True    
+                else: #Algum preenchido, refazer escolhas
+                    verificador = False
+
+        if orientacao == 1: #Preencher o tabuleiro conforme orientação
+            for i in range(3):
+                tabuleiro2[Linha - 1][Coluna - 1 + i] = "C"
+        elif orientacao == 2: #Preencher o tabuleiro conforme orientação
+            for i in range(3):
+                tabuleiro2[Linha - 1 + i][Coluna - 1] = "C"
+
+    elif x == 3: #Embarcação 2
+        verificador = False
+        verificador2 = 0
+        while verificador == False: #Loop verificador
+            orientacao = random.randint(1,2) 
+            
+            if orientacao == 1:
+                Linha = random.randint(1,10)
+                Coluna = random.randint(1,9)
+                for i in range(2): 
+                    if tabuleiro2[Linha - 1][Coluna - 1 + i] == 0: #Verificar posições
+                        verificador2 += 1
+                if verificador2 == 2: #Todos 0(Vazio), soma resulta correto, loop encerra
+                    verificador = True    
+                else:
+                    verificador = False
+            if orientacao == 2:
+                Linha = random.randint(1,9)
+                Coluna = random.randint(1,10)
+                for i in range(2): 
+                    if tabuleiro2[Linha - 1 + i][Coluna - 1] == 0: #Verificar posições
+                        verificador2 += 1
+                if verificador2 == 2: #Todos 0(Vazio), soma resulta correto, loop encerra
+                    verificador = True    
+                else: #Algum preenchido, refazer escolhas
+                    verificador = False
+        if orientacao == 1: #Preencher o tabuleiro conforme orientação
+            for i in range(2):
+                tabuleiro2[Linha - 1][Coluna - 1 + i] = "S"
+        elif orientacao == 2: #Preencher o tabuleiro conforme orientação
+            for i in range(2):
+                tabuleiro2[Linha - 1 + i][Coluna - 1] = "S"
+
+    elif x == 4: #Embarcação 1
+        verificador = False
+        verificador2 = 0
+        while verificador == False: #Loop verificador
+            
+            Linha = random.randint(1,10)
+            Coluna = random.randint(1,10)
+
+            if tabuleiro2[Linha - 1][Coluna - 1] == 0: #Verificar posições
+                        verificador2 += 1
+            if verificador2 == 1: #Todos 0(Vazio), soma resulta correto, loop encerra
+                    verificador = True    
+            else:  #Algum preenchido, refazer escolhas
+                verificador = False
+
+        tabuleiro2[Linha - 1][Coluna - 1] = "D" #Preencher o tabuleiro
+
+# def verificador_preenchido(w, x, y, z): PROJETO DESCARTADO DE VERIFICAR PREENCHIMENTO NO MODO 3
+#     verificador = 0
+#     if w == 1:
+#         if x == 1:
+#             for i in range(4): #Vai verificar todas as posições para ver se não está vazia
+#                 if tabuleiro2jogador[y - 1][z - 1 + i] == 0:
+#                     verificador += 1    
+#             if verificador == 4:
+#                 return True
+#             else: #Se uma das posições conflitar, o loop retorna para selecionar novamente
+#                 print("Não foi possível posicionar sua embarcação pois conflita com a de outra, escolha novamente:")
+#                 print()
+#                 return False
 
 rodada(selecao(menu()))
 
