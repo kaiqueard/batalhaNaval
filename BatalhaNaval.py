@@ -551,7 +551,7 @@ def rodada(modo):
 def selecao_barcos_jogador(x):
     if x == 0: #Embarcação 5
         print("Porta-aviões, embarcação de 5 posições")
-        orientacao = int(input("Escolha a orientaçã\n1 - Horizontal\n2 - Vertical\n"))  #Escolher orientação
+        orientacao = int(input("Escolha a orientação\n1 - Horizontal\n2 - Vertical\n"))  #Escolher orientação
         while orientacao != 1 and orientacao != 2:
             orientacao = int(input("Escolha CORRETAMENTE a orientação\n1 - Horizontal\n2 - Vertical\n"))
 
@@ -585,7 +585,7 @@ def selecao_barcos_jogador(x):
         while verificador == False:           #Loop para verificar se não está ocupando uma posição preenchida
             print("Navio-tanque, embarcação de 4 posições")
             print("Evite transtornos, verifique onde já está ocupado e NÃO posicione ali\n")
-            orientacao = int(input("Escolha a orientaçã\n1 - Horizontal\n2 - Vertical\n"))
+            orientacao = int(input("Escolha a orientação\n1 - Horizontal\n2 - Vertical\n"))
             while orientacao != 1 and orientacao != 2:
                 orientacao = int(input("Escolha CORRETAMENTE a orientação\n1 - Horizontal\n2 - Vertical\n"))
 
@@ -639,7 +639,7 @@ def selecao_barcos_jogador(x):
         while verificador == False: #Loop verificador
             print("Contratorpedeiro, embarcação de 3 posições")
             print("Evite transtornos, verifique onde já está ocupado e NÃO posicione ali\n")
-            orientacao = int(input("Escolha a orientaçã\n1 - Horizontal\n2 - Vertical\n")) 
+            orientacao = int(input("Escolha a orientação\n1 - Horizontal\n2 - Vertical\n")) 
             while orientacao != 1 and orientacao != 2:
                 orientacao = int(input("Escolha CORRETAMENTE a orientação\n1 - Horizontal\n2 - Vertical\n"))
             
@@ -690,7 +690,7 @@ def selecao_barcos_jogador(x):
         while verificador == False: #Loop verificador
             print("Submarino, embarcação de 2 posições")
             print("Evite transtornos, verifique onde já está ocupado e NÃO posicione ali\n")
-            orientacao = int(input("Escolha a orientaçã\n1 - Horizontal\n2 - Vertical\n"))
+            orientacao = int(input("Escolha a orientação\n1 - Horizontal\n2 - Vertical\n"))
             while orientacao != 1 and orientacao != 2:
                 orientacao = int(input("Escolha CORRETAMENTE a orientação\n1 - Horizontal\n2 - Vertical\n"))
             
