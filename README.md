@@ -39,7 +39,7 @@ O jogo só encerra quando TODAS as embarcações inimigas forem afundadas.
 ## Demonstração
 | Tabuleio 5x10 | Tabuleiro 10x10 | Desafio |
 |----------|--------------|-----------|
-| ![](.//gifs/5x10.gif) | ![](.//gifs/10x10.gif) | ![]()
+| ![](.//gifs/5x10.gif) | ![](.//gifs/10x10.gif) | ![](.//gifs/desafio.gif) |
   
 # Linguagem
 
