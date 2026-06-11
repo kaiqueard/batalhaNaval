@@ -82,6 +82,7 @@ computador2feedback =[ [0,0,0,0,0,0,0,0,0,0],
 ]
 #variáveis
 quantidade_embarcaçoes = [5, 5]
+#variáveis pro desafio
 porta_avioes = [5,5]
 navio_tanque = [4,4]
 contratorpedeiro = [3,3]
@@ -541,9 +542,16 @@ def selecao_barcos_jogador(x):
     if x == 0: #Embarcação 5
         print("Porta-aviões, embarcação de 5 posições")
         orientacao = int(input("Escolha a orientaçã\n1 - Horizontal\n2 - Vertical\n"))  #Escolher orientação
+        while orientacao != 1 and orientacao != 2:
+            orientacao = int(input("Escolha CORRETAMENTE a orientação\n1 - Horizontal\n2 - Vertical\n"))
+
         if orientacao == 1:
             Linha = int(input("Digite a linha em que você quer colocar: 1-10: "))
+            while Linha < 1 or Linha > 10:
+                Linha = int(input("Digite CORRETAMENTE linha em que você quer colocar: 1-10: "))
             Coluna = int(input("Digite a coluna em que você quer colocar: 1-6: "))
+            while Coluna < 1 or Coluna > 6:
+                Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer colocar: 1-6: "))
             for i in range(5):
                 tabuleiro2jogador[Linha - 1][Coluna - 1 + i] = "P"                #Adicionar ao tabuleiro
             for i in range(len(tabuleiro2jogador)):
@@ -551,7 +559,11 @@ def selecao_barcos_jogador(x):
             print()
         if orientacao == 2:
             Linha = int(input("Digite a linha em que você quer colocar: 1-6: "))
+            while Linha < 1 or Linha > 6:
+                Linha = int(input("Digite CORRETAMENTE linha em que você quer colocar: 1-6: "))
             Coluna = int(input("Digite a coluna em que você quer colocar: 1-10: "))
+            while Coluna < 1 or Coluna > 10:
+                Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer colocar: 1-10: "))
             for i in range(5):
                 tabuleiro2jogador[Linha - 1 + i][Coluna - 1] = "P"
             for i in range(len(tabuleiro2jogador)):
@@ -564,9 +576,16 @@ def selecao_barcos_jogador(x):
             print("Navio-tanque, embarcação de 4 posições")
             print("Evite transtornos, verifique onde já está ocupado e NÃO posicione ali\n")
             orientacao = int(input("Escolha a orientaçã\n1 - Horizontal\n2 - Vertical\n"))
+            while orientacao != 1 and orientacao != 2:
+                orientacao = int(input("Escolha CORRETAMENTE a orientação\n1 - Horizontal\n2 - Vertical\n"))
+
             if orientacao == 1:
                 Linha = int(input("Digite a linha em que você quer colocar: 1-10: "))
+                while Linha < 1 or Linha > 10:
+                    Linha = int(input("Digite CORRETAMENTE linha em que você quer colocar: 1-10: "))
                 Coluna = int(input("Digite a coluna em que você quer colocar: 1-7: "))
+                while Coluna < 1 or Coluna > 7:
+                    Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer colocar: 1-7: "))
                 for i in range(4): #Vai verificar todas as posições para ver se não está vazia
                     if tabuleiro2jogador[Linha - 1][Coluna - 1 + i] == 0:
                         verificador2 += 1
@@ -578,7 +597,11 @@ def selecao_barcos_jogador(x):
                 print()
             if orientacao == 2:
                 Linha = int(input("Digite a linha em que você quer colocar: 1-7: "))
+                while Linha < 1 or Linha > 7:
+                    Linha = int(input("Digite CORRETAMENTE linha em que você quer colocar: 1-7: "))
                 Coluna = int(input("Digite a coluna em que você quer colocar: 1-10: "))
+                while Coluna < 1 or Coluna > 10:
+                    Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer colocar: 1-10: "))
                 for i in range(4):
                     if tabuleiro2jogador[Linha - 1 + i][Coluna - 1] == 0:
                         verificador2 += 1
@@ -607,10 +630,16 @@ def selecao_barcos_jogador(x):
             print("Contratorpedeiro, embarcação de 3 posições")
             print("Evite transtornos, verifique onde já está ocupado e NÃO posicione ali\n")
             orientacao = int(input("Escolha a orientaçã\n1 - Horizontal\n2 - Vertical\n")) 
+            while orientacao != 1 and orientacao != 2:
+                orientacao = int(input("Escolha CORRETAMENTE a orientação\n1 - Horizontal\n2 - Vertical\n"))
             
             if orientacao == 1:
                 Linha = int(input("Digite a linha em que você quer colocar: 1-10: "))
+                while Linha < 1 or Linha > 10:
+                    Linha = int(input("Digite CORRETAMENTE linha em que você quer colocar: 1-10: "))
                 Coluna = int(input("Digite a coluna em que você quer colocar: 1-8: "))
+                while Coluna < 1 or Coluna > 8:
+                    Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer colocar: 1-8: "))
                 for i in range(3): 
                     if tabuleiro2jogador[Linha - 1][Coluna - 1 + i] == 0: #Verificar posições
                         verificador2 += 1
@@ -622,7 +651,11 @@ def selecao_barcos_jogador(x):
                 print()
             if orientacao == 2:
                 Linha = int(input("Digite a linha em que você quer colocar: 1-8: "))
+                while Linha < 1 or Linha > 8:
+                    Linha = int(input("Digite CORRETAMENTE linha em que você quer colocar: 1-8: "))
                 Coluna = int(input("Digite a coluna em que você quer colocar: 1-10: "))
+                while Coluna < 1 or Coluna > 10:
+                    Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer colocar: 1-10: "))
                 for i in range(3):
                     if tabuleiro2jogador[Linha - 1 + i][Coluna - 1] == 0: #Verificar posições
                         verificador2 += 1
@@ -648,10 +681,16 @@ def selecao_barcos_jogador(x):
             print("Submarino, embarcação de 2 posições")
             print("Evite transtornos, verifique onde já está ocupado e NÃO posicione ali\n")
             orientacao = int(input("Escolha a orientaçã\n1 - Horizontal\n2 - Vertical\n"))
+            while orientacao != 1 and orientacao != 2:
+                orientacao = int(input("Escolha CORRETAMENTE a orientação\n1 - Horizontal\n2 - Vertical\n"))
             
             if orientacao == 1:
                 Linha = int(input("Digite a linha em que você quer colocar: 1-10: "))
+                while Linha < 1 or Linha > 10:
+                    Linha = int(input("Digite CORRETAMENTE linha em que você quer colocar: 1-10: "))
                 Coluna = int(input("Digite a coluna em que você quer colocar: 1-9: "))
+                while Coluna < 1 or Coluna > 9:
+                    Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer colocar: 1-9: "))
                 for i in range(2): 
                     if tabuleiro2jogador[Linha - 1][Coluna - 1 + i] == 0: #Verificar posições
                         verificador2 += 1
@@ -663,7 +702,11 @@ def selecao_barcos_jogador(x):
                 print()
             if orientacao == 2:
                 Linha = int(input("Digite a linha em que você quer colocar: 1-9: "))
+                while Linha < 1 or Linha > 9:
+                    Linha = int(input("Digite CORRETAMENTE linha em que você quer colocar: 1-9: "))
                 Coluna = int(input("Digite a coluna em que você quer colocar: 1-10: "))
+                while Coluna < 1 or Coluna > 10:
+                    Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer colocar: 1-10: "))
                 for i in range(2): 
                     if tabuleiro2jogador[Linha - 1 + i][Coluna - 1] == 0: #Verificar posições
                         verificador2 += 1
@@ -688,7 +731,11 @@ def selecao_barcos_jogador(x):
             print("Evite transtornos, verifique onde já está ocupado e NÃO posicione ali\n")
             
             Linha = int(input("Digite a linha em que você quer colocar: 1-10: "))
+            while Linha < 1 or Linha > 10:
+                Linha = int(input("Digite CORRETAMENTE linha em que você quer colocar: 1-10: "))
             Coluna = int(input("Digite a coluna em que você quer colocar: 1-10: "))
+            while Coluna < 1 or Coluna > 10:
+                Coluna = int(input("Digite CORRETAMENTE a coluna em que você quer colocar: 1-10: "))
 
             if tabuleiro2jogador[Linha - 1][Coluna - 1] == 0: #Verificar posições
                         verificador2 += 1
